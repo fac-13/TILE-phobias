@@ -1,0 +1,24 @@
+{
+  "name": "github",
+  "version": "1.0.0",
+  "description": "phobia autocomplete",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fac-13/TILE-phobias.git"
+  },
+  "author": "tammy, lawrence, ivi, eade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fac-13/TILE-phobias/issues"
+  },
+  "homepage": "https://github.com/fac-13/TILE-phobias#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0"
+  }
+}
