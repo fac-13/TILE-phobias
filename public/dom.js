@@ -61,24 +61,26 @@ var request = function(param, callback1, callback2) {
 
 function displayKeys(data) {
   var keys = Object.keys(data);
-  keys.forEach(function(val) {
+  keys.splice(10);
+  keys.forEach(function(key) {
     var item = document.createElement("li");
     item.setAttribute("class", "list__item");
-    item.setAttribute("data-phobiavalue", data[val]);
-    var text = document.createTextNode(val);
+    item.setAttribute("data-phobiavalue", data[key]);
+    var text = document.createTextNode(key);
     item.appendChild(text);
     list.appendChild(item);
   });
 }
 
+
 function filterKeys(data, str) {
   var keys = Object.keys(data);
-  var result = keys.filter(function(val) {
-    return val.startsWith(str);
+  var result = keys.filter(function(key) {
+    return key.startsWith(str);
   });
   var resultObj = {};
-  result.forEach(function(val) {
-    resultObj[val] = data[val];
+  result.forEach(function(key) {
+    resultObj[key] = data[key];
   });
   return resultObj;
 }
