@@ -1,7 +1,59 @@
 .home-body {
   background-color: orange;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Abel', sans-serif;
 }
 
+.input{
+  background-color: #3b4047;
+  height: 9rem;
+  width: 15rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+}
+
+.list{
+  margin: 0;
+  padding: 0;
+}
+
+.list__item{
+  list-style: none;
+  background-color: #3b4047;
+  color: white;
+  margin: 5px 0;
+  height: 1.5rem;
+  width: 8rem;
+  text-align: center;
+}
+
+.on{
+  background-color: #3b4047;
+  color: white;
+  width: 60%;
+  height: 50%;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+.phobia{
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+.input:focus{
+  box-shadow: 0 0 10px ;
+}
 .results-body {
   background-color: blue;
 }
