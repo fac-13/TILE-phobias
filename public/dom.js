@@ -12,11 +12,11 @@ var request = function(param) {
   var url = "/api/phobias/" + param;
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
-      if (xhr.readyState === 200) {
+      if (xhr.status === 200) {
         var response = JSON.parse(xhr.responseText);
         console.log(response);
       } else {
-        console.log(error);
+        console.log("error");
       }
     }
   };
