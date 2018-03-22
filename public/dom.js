@@ -2,17 +2,21 @@ var inputField = document.querySelector(".input");
 var list = document.querySelector('.list')
 var container = document.querySelector('.container')
 var resultsContainer = document.querySelector('.results-container')
+var globalData;
 
 inputField.addEventListener("keyup", function(e) {
-  var globalData;
   var userInput = e.target.value;
   console.log(userInput)
   if (userInput.length == 1) {
     request(userInput, displayKeys, displayValues);
+  } else {
+    console.log(globalData)
+    filterKeys(globalData, userInput)
   }
 });
 
 function displayValues(){
+
   list.addEventListener('click', function(e){
     var phobiaKey = e.srcElement.innerText;
     var phobiaValue = e.target.dataset.phobiavalue;
@@ -61,4 +65,13 @@ function displayKeys(data){
     item.appendChild(text)
     list.appendChild(item)
   })
+}
+
+function filterKeys(data, str){
+ var keys = Object.keys(data);
+ var result = keys.filter(function(val){
+   return val.startsWith(str)
+ })
+ console.log(result)
+ return result;
 }
