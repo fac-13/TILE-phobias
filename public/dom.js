@@ -34,8 +34,6 @@ function displayValues() {
     phobiaP.appendChild(phobiaContent);
     resultsContainer.appendChild(content);
     resultsContainer.appendChild(phobiaP);
-    var x = document.querySelector(".home-body");
-
     document.body.replaceChild(resultsContainer, container);
     resultsContainer.classList.add("on");
   });
