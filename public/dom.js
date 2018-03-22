@@ -11,8 +11,10 @@ inputField.addEventListener("keyup", function(e) {
     request(userInput, displayKeys, displayValues);
   } else {
     console.log(globalData)
-    filterKeys(globalData, userInput)
+    var filteredObj = filterKeys(globalData, userInput)
+    displayKeys(filteredObj)
   }
+
 });
 
 function displayValues(){
@@ -72,6 +74,9 @@ function filterKeys(data, str){
  var result = keys.filter(function(val){
    return val.startsWith(str)
  })
- console.log(result)
- return result;
+ var resultObj = {};
+ result.forEach(function(val){
+   resultObj[val] = data[val]
+ })
+ return resultObj;
 }
