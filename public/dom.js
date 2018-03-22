@@ -1,21 +1,18 @@
 var inputField = document.querySelector(".input");
-var list = document.querySelector(".list");
+var list = document.getElementById("list");
 var container = document.querySelector(".container");
 var resultsContainer = document.querySelector(".results-container");
 var globalData;
 
 inputField.addEventListener("keyup", function(e) {
-  if (inputField.value.length == 0) {
-    while (list.firstChild) {
-      list.removeChild(list.firstChild);
-    }
+  while (list.firstChild) {
+    list.removeChild(list.firstChild);
   }
   var userInput = e.target.value;
-  console.log(userInput);
   if (userInput.length == 1) {
     request(userInput, displayKeys, displayValues);
+  } else if (userInput.length == 0) {
   } else {
-    console.log(globalData);
     var filteredObj = filterKeys(globalData, userInput);
     displayKeys(filteredObj);
   }
@@ -49,7 +46,7 @@ var request = function(param, callback1, callback2) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
         var response = JSON.parse(xhr.responseText);
-        console.log(response);
+
         callback1(response);
         callback2();
         globalData = response;
@@ -69,7 +66,6 @@ function displayKeys(data) {
     item.setAttribute("class", "list__item");
     item.setAttribute("data-phobiavalue", data[val]);
     var text = document.createTextNode(val);
-
     item.appendChild(text);
     list.appendChild(item);
   });
