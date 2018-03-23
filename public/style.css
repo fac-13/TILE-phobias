@@ -20,9 +20,11 @@
   text-align: center;
 }
 
-.list{
+#list{
   margin: 0;
   padding: 0;
+  height: 300px;
+  overflow: scroll;
 }
 
 .list__item{
