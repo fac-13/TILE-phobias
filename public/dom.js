@@ -8,7 +8,8 @@ inputField.addEventListener("keyup", function(e) {
   while (list.firstChild) {
     list.removeChild(list.firstChild);
   }
-  var userInput = e.target.value;
+  var userInput = e.target.value.toLowerCase();
+  userInput = userInput.trim();
     request(userInput, displayKeys, displayValues);
   });
 
