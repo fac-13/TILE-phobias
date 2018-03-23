@@ -62,10 +62,13 @@ const handleApi = (req, res) => {
   const letter = split[split.length - 1];
   const dataObj = JSON.parse(JSON.stringify(data));
   const keys = Object.keys(dataObj);
-  const filtered = keys.filter(key => key.startsWith(letter));
-  const returnVals = {};
-  filtered.forEach(val => (returnVals[val] = dataObj[val]));
-  res.end(JSON.stringify(returnVals));
+  if (letter) {
+    const filtered = keys.filter(key => key.startsWith(letter));
+    const returnVals = {};
+    filtered.forEach(val => (returnVals[val] = dataObj[val]));
+    res.end(JSON.stringify(returnVals));
+  }
+  
 };
 
 module.exports = {
