@@ -11,8 +11,11 @@
 .heading {
   font-family: 'Abel', sans-serif;
   text-transform: uppercase;
+  font-size: 3rem;
   padding: 0;
   margin: 0;
+  margin-top: 5rem;
+  padding-bottom: 2rem;
 }
 
 .input{
