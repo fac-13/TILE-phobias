@@ -9,13 +9,13 @@ inputField.addEventListener("keyup", function(e) {
     list.removeChild(list.firstChild);
   }
   var userInput = e.target.value;
-  if (userInput.length == 1) {
+  // if (userInput.length == 1) {
     request(userInput, displayKeys, displayValues);
-  } else if (userInput.length == 0) {
-  } else {
+  // } else if (userInput.length == 0) {
+  // } else {
     var filteredObj = filterKeys(globalData, userInput);
     displayKeys(filteredObj);
-  }
+  // }
 });
 
 function displayValues() {
@@ -61,7 +61,7 @@ var request = function(param, callback1, callback2) {
 
 function displayKeys(data) {
   var keys = Object.keys(data);
-  keys.splice(10);
+  // keys.splice(10);
   keys.forEach(function(key) {
     var item = document.createElement("li");
     item.setAttribute("class", "list__item");
