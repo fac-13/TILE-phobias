@@ -9,14 +9,8 @@ inputField.addEventListener("keyup", function(e) {
     list.removeChild(list.firstChild);
   }
   var userInput = e.target.value;
-  // if (userInput.length == 1) {
     request(userInput, displayKeys, displayValues);
-  // } else if (userInput.length == 0) {
-  // } else {
-    // var filteredObj = filterKeys(globalData, userInput);
-    // displayKeys(filteredObj);
-  // }
-});
+  });
 
 function displayValues() {
   list.addEventListener("click", function(e) {
@@ -71,16 +65,3 @@ function displayKeys(data) {
     list.appendChild(item);
   });
 }
-
-
-// function filterKeys(data, str) {
-//   var keys = Object.keys(data);
-//   var result = keys.filter(function(key) {
-//     return key.startsWith(str);
-//   });
-//   var resultObj = {};
-//   result.forEach(function(key) {
-//     resultObj[key] = data[key];
-//   });
-//   return resultObj;
-// }
