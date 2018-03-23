@@ -34,6 +34,10 @@
   overflow: scroll;
 }
 
+#list::-webkit-scrollbar {
+  display: none;
+}
+
 .list__item{
   list-style: none;
   background-color: #3b4047;
@@ -42,6 +46,12 @@
   height: 1.5rem;
   width: 8rem;
   text-align: center;
+  width: 100%;
+}
+
+.list__item:hover {
+  cursor: pointer;
+  background-color: #4E5866;
 }
 
 .on{
