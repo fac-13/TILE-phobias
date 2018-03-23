@@ -23,12 +23,15 @@ function displayValues() {
     var phobiaP = document.createElement("p");
     phobiaP.setAttribute("class", "phobia");
     var phobiaContent = document.createTextNode(phobiaValue);
-
+    while (resultsContainer.firstChild) {
+      resultsContainer.removeChild(resultsContainer.firstChild);
+    }
     content.appendChild(pContent);
     phobiaP.appendChild(phobiaContent);
     resultsContainer.appendChild(content);
     resultsContainer.appendChild(phobiaP);
-    document.body.replaceChild(resultsContainer, container);
+    var homeContent = document.querySelector('.home-body');
+    homeContent.removeChild(container);
     resultsContainer.classList.add("on");
   });
 }

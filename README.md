@@ -7,6 +7,9 @@ you can search your fear and see what the official name for that fear is. The se
 ##   [REQUIREMENTS]
 
 Build a website that uses our own server to autocomplete a text input box. 
+
+## THE DATA
+we wanted to use data that we couldnt find from an API, so we found the data in list form from a website, converted it into an object and stored it in our data.json file. We used a json validator online to check we had converted it correctly. 
   
 
 ## TO RUN THIS PROJECT
