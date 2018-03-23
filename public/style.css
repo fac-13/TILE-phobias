@@ -8,11 +8,18 @@
   font-family: 'Abel', sans-serif;
 }
 
+.heading {
+  font-family: 'Abel', sans-serif;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
 .input{
   background-color: #3b4047;
-  height: 9rem;
-  width: 15rem;
-  border-radius: 50%;
+  height: 6rem;
+  width: 20rem;
+  border-radius: 10px;
   border: none;
   outline: none;
   font-size: 3rem;
