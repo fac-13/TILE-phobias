@@ -28,20 +28,30 @@
 }
 
 #list{
-  margin: 0;
+  margin: 0.5rem 0;
   padding: 0;
   height: 300px;
   overflow: scroll;
+}
+
+#list::-webkit-scrollbar {
+  display: none;
 }
 
 .list__item{
   list-style: none;
   background-color: #3b4047;
   color: white;
-  margin: 5px 0;
+  margin: 1px 0;
   height: 1.5rem;
   width: 8rem;
   text-align: center;
+  width: 100%;
+}
+
+.list__item:hover {
+  cursor: pointer;
+  background-color: #4E5866;
 }
 
 .on{
