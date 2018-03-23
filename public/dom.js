@@ -9,14 +9,8 @@ inputField.addEventListener("keyup", function(e) {
     list.removeChild(list.firstChild);
   }
   var userInput = e.target.value;
-  if (userInput.length == 1) {
     request(userInput, displayKeys, displayValues);
-  } else if (userInput.length == 0) {
-  } else {
-    var filteredObj = filterKeys(globalData, userInput);
-    displayKeys(filteredObj);
-  }
-});
+  });
 
 function displayValues() {
   list.addEventListener("click", function(e) {
@@ -29,12 +23,15 @@ function displayValues() {
     var phobiaP = document.createElement("p");
     phobiaP.setAttribute("class", "phobia");
     var phobiaContent = document.createTextNode(phobiaValue);
-
+    while (resultsContainer.firstChild) {
+      resultsContainer.removeChild(resultsContainer.firstChild);
+    }
     content.appendChild(pContent);
     phobiaP.appendChild(phobiaContent);
     resultsContainer.appendChild(content);
     resultsContainer.appendChild(phobiaP);
-    document.body.replaceChild(resultsContainer, container);
+    var homeContent = document.querySelector('.home-body');
+    homeContent.removeChild(container);
     resultsContainer.classList.add("on");
   });
 }
@@ -61,7 +58,7 @@ var request = function(param, callback1, callback2) {
 
 function displayKeys(data) {
   var keys = Object.keys(data);
-  keys.splice(10);
+  // keys.splice(10);
   keys.forEach(function(key) {
     var item = document.createElement("li");
     item.setAttribute("class", "list__item");
@@ -70,17 +67,4 @@ function displayKeys(data) {
     item.appendChild(text);
     list.appendChild(item);
   });
-}
-
-
-function filterKeys(data, str) {
-  var keys = Object.keys(data);
-  var result = keys.filter(function(key) {
-    return key.startsWith(str);
-  });
-  var resultObj = {};
-  result.forEach(function(key) {
-    resultObj[key] = data[key];
-  });
-  return resultObj;
 }

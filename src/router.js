@@ -7,7 +7,6 @@ const {
 
 const router = (req, res) => {
   const url = req.url;
-  console.log("url: " + url);
   if (url === "/") {
     handleHomePage(req, res);
   } else if (url.indexOf("public") != -1) {
