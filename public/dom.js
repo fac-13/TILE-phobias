@@ -13,8 +13,8 @@ inputField.addEventListener("keyup", function(e) {
     request(userInput, displayKeys, displayValues);
   // } else if (userInput.length == 0) {
   // } else {
-    var filteredObj = filterKeys(globalData, userInput);
-    displayKeys(filteredObj);
+    // var filteredObj = filterKeys(globalData, userInput);
+    // displayKeys(filteredObj);
   // }
 });
 
@@ -73,14 +73,14 @@ function displayKeys(data) {
 }
 
 
-function filterKeys(data, str) {
-  var keys = Object.keys(data);
-  var result = keys.filter(function(key) {
-    return key.startsWith(str);
-  });
-  var resultObj = {};
-  result.forEach(function(key) {
-    resultObj[key] = data[key];
-  });
-  return resultObj;
-}
+// function filterKeys(data, str) {
+//   var keys = Object.keys(data);
+//   var result = keys.filter(function(key) {
+//     return key.startsWith(str);
+//   });
+//   var resultObj = {};
+//   result.forEach(function(key) {
+//     resultObj[key] = data[key];
+//   });
+//   return resultObj;
+// }
